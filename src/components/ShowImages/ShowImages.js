@@ -21,9 +21,10 @@ export const ShowImages = () => {
     {link: slideEight},
   ];
   const [modal, setModal] = useState(false);
+  const [src, setSrc] = useState('');
 
   const toggleModal = (link) => {
-    console.log(link);
+    setSrc(link);
     setModal(!modal);
   }
 
@@ -40,17 +41,12 @@ export const ShowImages = () => {
                 alt="diving_photo"
               >
               </img>
-              <ImagePopup src={src.link} modal={modal} toggleModal={toggleModal} />
             </div>
           ))
         }
+        <ImagePopup src={src} modal={modal} toggleModal={toggleModal} />
       </div>
       <div className="w-full h-16 bg-rose-500 hover:bg-yellow-500 duration-500"></div>
-      {
-        // modal && (
-        //   <div id="overlay" onClick={toggleModal} className="w-screen h-screen fixed top-0 right-0 bottom-0 left-0 z-20"></div>
-        // )
-      }
     </>
   )
 }
