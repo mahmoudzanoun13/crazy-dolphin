@@ -33,9 +33,11 @@ export const ShowImages = () => {
       <div id="images" className="mt-28 md:grid md:grid-cols-4 bg-gray-800">
         {
           srcs.map(src => (
-            <div key={src.link}>
+            <div
+              key={src.link}
+              onClick={() => toggleModal(src.link)}
+            >
               <img
-                onClick={() => toggleModal(src.link)}
                 src={src.link}
                 className="w-full h-auto grayscale hover:grayscale-0 cursor-pointer duration-500 scale-100 ease-in-out hover:scale-110 md:p-5"
                 alt="diving_photo"
